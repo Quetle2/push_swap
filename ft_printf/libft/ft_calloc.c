@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/30 17:51:29 by miandrad         ###   ########.fr       */
+/*   Created: 2022/10/26 14:30:33 by miandrad          #+#    #+#             */
+/*   Updated: 2022/10/27 15:38:24 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "ft_printf/ft_printf.h"
-
-typedef struct s_stack
+void	*ft_calloc(size_t noob, size_t size)
 {
-	t_list			*head;
-	int				size;
-}t_stack;
+	unsigned char	*poi;
 
-#endif
+	poi = malloc(noob * size);
+	if (!poi)
+		return (0);
+	ft_bzero(poi, noob * size);
+	return ((void *)poi);
+}

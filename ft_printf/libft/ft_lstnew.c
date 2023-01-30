@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/30 17:51:29 by miandrad         ###   ########.fr       */
+/*   Created: 2022/11/03 17:29:57 by miandrad          #+#    #+#             */
+/*   Updated: 2022/11/08 15:49:57 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "ft_printf/ft_printf.h"
-
-typedef struct s_stack
+t_list	*ft_lstnew(void *content)
 {
-	t_list			*head;
-	int				size;
-}t_stack;
+	struct s_list	*cabeca;
 
-#endif
+	cabeca = malloc(sizeof(struct s_list));
+	if (!cabeca)
+		return (0);
+	cabeca->content = content;
+	cabeca->next = NULL;
+	return (cabeca);
+}

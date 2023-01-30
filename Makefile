@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    MAKEFILE                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/27 18:21:04 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/30 16:01:10 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,21 +33,25 @@ RM = rm -rf
 
 CFLAGS = -Wall -Wextra -Werror
 
+LIB = push_swap.a
+
 SRC = main.c
 
-OBJ = (SRC:.c.o)
+OBJ = $(SRC:.c=.o)
 
-all: (NAME)
+all: $(NAME)
 
-$(NAME): 
-
-
-re:
-
+$(NAME): $(addprefix SRC/,$(OBJ))
+	@make -s -C ft_printf
+	ar rcs $(LIB) $(addprefix SRC/,$(OBJ)) 
+	$(CC) $(CFLAGS) $(LIB) ft_printf/libftprintf.a -o $(NAME)
 
 clean: 
-	@rm -rf OBJ 
-	@make clean -C ft_printf
+	@$(RM) $(addprefix SRC/,$(OBJ))
+	@make clean -s -C ft_printf
 
 fclean: clean  
-	@make fclean -C ft_printf
+	@make fclean -s -C ft_printf
+	@$(RM) $(NAME) $(LIB)
+
+re: fclean all

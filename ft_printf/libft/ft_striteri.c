@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/30 17:51:29 by miandrad         ###   ########.fr       */
+/*   Created: 2022/11/03 12:23:38 by miandrad          #+#    #+#             */
+/*   Updated: 2022/11/03 13:01:16 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "ft_printf/ft_printf.h"
-
-typedef struct s_stack
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	t_list			*head;
-	int				size;
-}t_stack;
+	size_t	l;
+	size_t	i;
 
-#endif
+	i = 0;
+	if (!s || !f)
+		return ;
+	l = ft_strlen(s);
+	while (i < l)
+	{
+		f(i, &s[i]);
+		i++;
+	}
+}
