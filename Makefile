@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/30 16:01:10 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/31 12:38:36 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ all: $(NAME)
 $(NAME): $(addprefix SRC/,$(OBJ))
 	@make -s -C ft_printf
 	ar rcs $(LIB) $(addprefix SRC/,$(OBJ)) 
-	$(CC) $(CFLAGS) $(LIB) ft_printf/libftprintf.a -o $(NAME)
+	$(CC) $(LIB) ft_printf/libftprintf.a -o $(NAME)
 
 clean: 
 	@$(RM) $(addprefix SRC/,$(OBJ))
