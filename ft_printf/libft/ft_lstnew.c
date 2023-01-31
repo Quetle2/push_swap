@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:29:57 by miandrad          #+#    #+#             */
-/*   Updated: 2022/11/08 15:49:57 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/31 17:40:21 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int *content)
 {
 	struct s_list	*cabeca;
 
 	cabeca = malloc(sizeof(struct s_list));
 	if (!cabeca)
 		return (0);
-	cabeca->content = content;
+	cabeca->content = &content;
 	cabeca->next = NULL;
 	return (cabeca);
 }

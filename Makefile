@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/31 12:38:36 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/31 18:12:29 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIB = push_swap.a
 
-SRC = main.c
+SRC = main.c moves.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -43,8 +43,14 @@ all: $(NAME)
 
 $(NAME): $(addprefix SRC/,$(OBJ))
 	@make -s -C ft_printf
-	ar rcs $(LIB) $(addprefix SRC/,$(OBJ)) 
-	$(CC) $(LIB) ft_printf/libftprintf.a -o $(NAME)
+	@ar rcs $(LIB) $(addprefix SRC/,$(OBJ))
+	@$(CC) $(LIB) ft_printf/libftprintf.a -o $(NAME)
+
+run: $(NAME)
+	@./push_swap 2 1 3
+
+valgrind: $(NAME)
+	valgrind ./push_swap 2 1 3
 
 clean: 
 	@$(RM) $(addprefix SRC/,$(OBJ))
