@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:53:00 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/31 18:09:15 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:03:17 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ void	sb(t_stack *stack)
 void	ss(t_stack *a, t_stack *b)
 {
 	sa(a);
-	sb(b);
+	if (b->head)
+		sb(b);
 }
 
 t_list	*pop(t_list **lst)

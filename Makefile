@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/31 18:12:29 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/31 18:24:30 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ run: $(NAME)
 	@./push_swap 2 1 3
 
 valgrind: $(NAME)
-	valgrind ./push_swap 2 1 3
+	valgrind --leak-check=full ./push_swap 2 1 3
 
 clean: 
 	@$(RM) $(addprefix SRC/,$(OBJ))

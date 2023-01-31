@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/31 17:43:36 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/31 19:12:26 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,28 @@ int	main(int argc, char **argv)
 	stack_init(&a);
 	stack_init(&b);
 	take_input(&a, argc, argv);
-	sa(&a);
+	ss(&a, &b);
+	// while (a.head)
+	// {
+	// 	ft_printf("%i\n", *(int *)a.head->content);
+	// 	a.head = a.head->next;
+	// }
+	free_malloooc(&a);
 }
 
 void	take_input(t_stack *stack, int argc, char **argv)
 {
 	int	i;
-	int	nbr;
+	int	*nbr;
 
 	i = 1;
 	if (!check_nbr(argc, argv))
 		return ;
 	while (i < argc)
 	{
-		nbr = ft_atoi(argv[i]);
-		ft_lstadd_back(&stack->head, ft_lstnew(&nbr));
+		nbr = malloc(sizeof(int));
+		*nbr = ft_atoi(argv[i]);
+		ft_lstadd_back(&stack->head, ft_lstnew(nbr));
 		i++;
 	}
 }
@@ -63,4 +70,9 @@ int	check_nbr(int argc, char **argv)
 		i++;
 	}
 	return (1);
+}
+
+void	free_malloooc(t_stack *stack)
+{
+	ft_lstclear(&stack->head, free);
 }

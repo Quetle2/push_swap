@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/31 18:05:04 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/31 18:36:48 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_stack
 
 int		check_nbr(int argc, char **argv);
 void	take_input(t_stack *stack, int argc, char **argv);
+void	free_malloooc(t_stack *stack);
 
 // MOVES
 
