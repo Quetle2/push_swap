@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/31 18:24:30 by miandrad         ###   ########.fr        #
+#    Updated: 2023/02/01 13:15:54 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ SRC = main.c moves.c
 
 OBJ = $(SRC:.c=.o)
 
+ARG = 2 1 4 3
+
 all: $(NAME)
 
 $(NAME): $(addprefix SRC/,$(OBJ))
@@ -47,10 +49,13 @@ $(NAME): $(addprefix SRC/,$(OBJ))
 	@$(CC) $(LIB) ft_printf/libftprintf.a -o $(NAME)
 
 run: $(NAME)
-	@./push_swap 2 1 3
+	@./push_swap $(ARG)
+
+check: $(NAME)
+	@./push_swap $(ARG) | ./checker_linux $(ARG)
 
 valgrind: $(NAME)
-	valgrind --leak-check=full ./push_swap 2 1 3
+	@valgrind --leak-check=full ./push_swap $(ARG)
 
 clean: 
 	@$(RM) $(addprefix SRC/,$(OBJ))

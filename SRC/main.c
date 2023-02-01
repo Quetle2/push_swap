@@ -6,16 +6,16 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/31 19:12:26 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:15:14 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	stack_init(t_stack *stack)
+void	stack_init(t_stack *stack, int argc)
 {
 	stack->head = NULL;
-	stack->size = 0;
+	stack->size = argc - 1;
 }
 
 int	main(int argc, char **argv)
@@ -23,10 +23,15 @@ int	main(int argc, char **argv)
 	t_stack	a;
 	t_stack	b;
 
-	stack_init(&a);
-	stack_init(&b);
+	stack_init(&a, argc);
+	stack_init(&b, argc);
 	take_input(&a, argc, argv);
-	ss(&a, &b);
+	sa(&a);
+	rra(&a);
+	rra(&a);
+	sa(&a);
+	ra(&a);
+	ra(&a);
 	// while (a.head)
 	// {
 	// 	ft_printf("%i\n", *(int *)a.head->content);
