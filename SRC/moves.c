@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:53:00 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/01 13:34:11 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/01 13:47:26 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,9 +98,7 @@ void	rra(t_stack *stack)
 	ft_printf("rra\n");
 }
 
-void	rrb(t_stack *stack)	node = stack->head;
-	while (node->next->next)
-		node = node->next;
+void	rrb(t_stack *stack)
 {
 	t_list	*node;
 
