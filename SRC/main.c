@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/01 13:15:14 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/01 16:48:38 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,8 @@ int	main(int argc, char **argv)
 	stack_init(&a, argc);
 	stack_init(&b, argc);
 	take_input(&a, argc, argv);
-	sa(&a);
-	rra(&a);
-	rra(&a);
-	sa(&a);
-	ra(&a);
-	ra(&a);
+	if (argc <= 4)
+		trhee(&a);
 	// while (a.head)
 	// {
 	// 	ft_printf("%i\n", *(int *)a.head->content);

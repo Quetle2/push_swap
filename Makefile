@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/02/01 13:15:54 by miandrad         ###   ########.fr        #
+#    Updated: 2023/02/01 17:42:54 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIB = push_swap.a
 
-SRC = main.c moves.c
+SRC = main.c moves.c moves_two.c moves_trhee.c sort.c
 
 OBJ = $(SRC:.c=.o)
 
-ARG = 2 1 4 3
+ARG = 1 2 3
 
 all: $(NAME)
 
