@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/02/01 17:42:54 by miandrad         ###   ########.fr        #
+#    Updated: 2023/02/01 18:37:04 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,11 @@ check: $(NAME)
 
 valgrind: $(NAME)
 	@valgrind --leak-check=full ./push_swap $(ARG)
+
+git: 
+	git add .
+	git commit
+	git push
 
 clean: 
 	@$(RM) $(addprefix SRC/,$(OBJ))
