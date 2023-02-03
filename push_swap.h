@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/01 15:59:13 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:30:02 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ typedef struct s_stack
 	int				size;
 }t_stack;
 
+void	ya(t_stack *a);
+void	printList(t_list *node);
+
 int		check_nbr(int argc, char **argv);
 void	take_input(t_stack *stack, int argc, char **argv);
-void	free_malloooc(t_stack *stack);
 void	trhee(t_stack *stack);
 int		check_order(t_list *lst);
 
@@ -42,5 +44,11 @@ void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *stack, int flag);
 void	rrb(t_stack *stack, int flag);
 void	rrr(t_stack *a, t_stack *b);
+
+// SORT
+
+void	mergesort(t_list **headRef);
+t_list	*sortedmerge(t_list *a, t_list *b);
+void	frontbacksplit(t_list *source, t_list **frontRef, t_list **backRef);
 
 #endif

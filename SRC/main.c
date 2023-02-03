@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/01 16:48:38 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/03 17:29:55 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,14 @@ int	main(int argc, char **argv)
 	take_input(&a, argc, argv);
 	if (argc <= 4)
 		trhee(&a);
-	// while (a.head)
-	// {
-	// 	ft_printf("%i\n", *(int *)a.head->content);
-	// 	a.head = a.head->next;
-	// }
-	free_malloooc(&a);
+	if (argc >= 5)
+		ya(&a);
+	printList((&a)->head);
+	ft_lstclear(&(&a)->head, free);}
+
+void	ya(t_stack *a)
+{
+	mergesort(&a->head);
 }
 
 void	take_input(t_stack *stack, int argc, char **argv)
@@ -71,9 +73,4 @@ int	check_nbr(int argc, char **argv)
 		i++;
 	}
 	return (1);
-}
-
-void	free_malloooc(t_stack *stack)
-{
-	ft_lstclear(&stack->head, free);
 }

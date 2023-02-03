@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 15:52:36 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/30 15:18:07 by miandrad         ###   ########.fr        #
+#    Updated: 2023/02/03 16:52:40 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ clean:
 			$(RM) $(OBJ) $(addprefix libft/,$(LB_OBJ))
 
 fclean:	clean
-			$(RM) $(NAME)
+	$(RM) libft/libft.a
+	$(RM) $(NAME)
 
 re:	fclean $(NAME)
