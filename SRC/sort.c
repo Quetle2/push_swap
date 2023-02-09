@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:36:40 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/03 16:53:43 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/06 12:10:05 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,16 @@ void	mergesort(t_list **headRef)
 	{
 		return ;
 	}
-	ft_printf("aqui\n");
 /* Split head into 'a' and 'b' sublists */
 	frontbacksplit(head, &a, &b);
 
 /* Recursively sort the sublists */
 	mergesort(&a);
 	mergesort(&b);
-
 /* answer = merge the two sorted lists together */
+	printList(*headRef);
 	*headRef = sortedmerge(a, b);
+	printList(*headRef);
 }
 
 t_list	*sortedmerge(t_list *a, t_list *b)
@@ -88,7 +88,7 @@ t_list	*sortedmerge(t_list *a, t_list *b)
 		return (a);
 
 /* Pick either a or b, and recur */
-	if (a->content <= b->content)
+	if (*a->content <= *b->content)
 	{
 		result = a;
 		result->next = sortedmerge(a->next, b);
@@ -129,7 +129,8 @@ void	frontbacksplit(t_list *source, t_list **frontRef, t_list **backRef)
 void	printList(t_list *node)
 {
 	while (node != NULL) {
-		printf("%d ", *node->content);
+		printf("--%d--\n", *node->content);
 		node = node->next;
 	}
+	printf("end\n");
 }
