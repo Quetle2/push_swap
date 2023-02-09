@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/03 17:29:55 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/09 07:36:47 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,9 @@ int	main(int argc, char **argv)
 	if (argc <= 4)
 		trhee(&a);
 	if (argc >= 5)
-		ya(&a);
-	printList((&a)->head);
-	ft_lstclear(&(&a)->head, free);}
-
-void	ya(t_stack *a)
-{
-	mergesort(&a->head);
+		sort(&(&a)->head, &(&b)->head);
+	// printList((&a)->head);
+	ft_lstclear(&(&a)->head, free);
 }
 
 void	take_input(t_stack *stack, int argc, char **argv)

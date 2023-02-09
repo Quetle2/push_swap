@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:36:40 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/06 12:10:05 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/09 07:34:12 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,7 @@ int	check_order(t_list *lst)
 	return (1);
 }
 
-
 // testing
-
 
 void	mergesort(t_list **headRef)
 {
@@ -66,7 +64,6 @@ void	mergesort(t_list **headRef)
 	}
 /* Split head into 'a' and 'b' sublists */
 	frontbacksplit(head, &a, &b);
-
 /* Recursively sort the sublists */
 	mergesort(&a);
 	mergesort(&b);
@@ -86,7 +83,6 @@ t_list	*sortedmerge(t_list *a, t_list *b)
 		return (b);
 	else if (b == NULL)
 		return (a);
-
 /* Pick either a or b, and recur */
 	if (*a->content <= *b->content)
 	{
@@ -108,7 +104,6 @@ void	frontbacksplit(t_list *source, t_list **frontRef, t_list **backRef)
 
 	slow = source;
 	fast = source->next;
-
 /* Advance 'fast' two nodes, and advance 'slow' one node */
 	while (fast != NULL)
 	{
@@ -119,7 +114,6 @@ void	frontbacksplit(t_list *source, t_list **frontRef, t_list **backRef)
 			fast = fast->next;
 		}
 	}
-
 //'slow' is before the midpoint in the list, so split it in two at that point.
 	*frontRef = source;
 	*backRef = slow->next;
@@ -129,7 +123,7 @@ void	frontbacksplit(t_list *source, t_list **frontRef, t_list **backRef)
 void	printList(t_list *node)
 {
 	while (node != NULL) {
-		printf("--%d--\n", *node->content);
+		printf("%d ", *node->content);
 		node = node->next;
 	}
 	printf("end\n");

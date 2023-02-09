@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_trhee.c                                      :+:      :+:    :+:   */
+/*   sort_pt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 14:38:00 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/08 16:32:31 by miandrad         ###   ########.fr       */
+/*   Created: 2023/02/08 14:50:53 by miandrad          #+#    #+#             */
+/*   Updated: 2023/02/08 16:27:39 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrr(t_list *a, t_list *b)
+void	sort(t_list **a, t_list **b)
 {
-	rra(&a, 1);
-	if (b)
-		rrb(&b, 1);
-}
-
-t_list	*pop(t_list **lst)
-{
-	t_list	*temp;
-
-	temp = *lst;
-	*lst = (*lst)->next;
-	temp->next = NULL;
-	return (temp);
-}
-
-t_list	*poplast(t_list **lst)
-{
-	t_list	*temp;
-
-	temp = (*lst)->next;
-	(*lst)->next = NULL;
-	return (temp);
+	while (*a)
+	{
+		ra(a, 0);
+		while (*b && *(*b)->content > *ft_lstlast(*a)->content)
+		{
+			pa(a, b);
+		}
+		rra(a, 0);
+		pb(a, b);
+	}
 }

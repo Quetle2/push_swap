@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/03 17:30:02 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/08 16:29:21 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_stack
 	int				size;
 }t_stack;
 
-void	ya(t_stack *a);
 void	printList(t_list *node);
 
 int		check_nbr(int argc, char **argv);
@@ -33,21 +32,22 @@ int		check_order(t_list *lst);
 
 t_list	*pop(t_list **lst);
 t_list	*poplast(t_list **lst);
-void	sa(t_stack *stack, int flag);
-void	sb(t_stack *stack, int flag);
-void	ss(t_stack *a, t_stack *b);
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
-void	ra(t_stack *stack, int flag);
-void	rb(t_stack *stack, int flag);
-void	rr(t_stack *a, t_stack *b);
-void	rra(t_stack *stack, int flag);
-void	rrb(t_stack *stack, int flag);
-void	rrr(t_stack *a, t_stack *b);
+void	sa(t_list **list, int flag);
+void	sb(t_list **list, int flag);
+void	ss(t_list **a, t_list **b);
+void	pa(t_list **a, t_list **b);
+void	pb(t_list **a, t_list **b);
+void	ra(t_list **list, int flag);
+void	rb(t_list **list, int flag);
+void	rr(t_list **a, t_list **b);
+void	rra(t_list **list, int flag);
+void	rrb(t_list **list, int flag);
+void	rrr(t_list *a, t_list *b);
 
 // SORT
 
 void	mergesort(t_list **headRef);
+void	sort(t_list **a, t_list **b);
 t_list	*sortedmerge(t_list *a, t_list *b);
 void	frontbacksplit(t_list *source, t_list **frontRef, t_list **backRef);
 
