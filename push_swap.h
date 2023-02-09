@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/08 16:29:21 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/09 10:10:29 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ typedef struct s_stack
 	int				size;
 }t_stack;
 
-void	printList(t_list *node);
+void	printlist(t_list *node);
 
 int		check_nbr(int argc, char **argv);
 void	take_input(t_stack *stack, int argc, char **argv);
 void	trhee(t_stack *stack);
 int		check_order(t_list *lst);
+int		reverse_order(t_list *lst);
 
 // MOVES
 
@@ -42,7 +43,7 @@ void	rb(t_list **list, int flag);
 void	rr(t_list **a, t_list **b);
 void	rra(t_list **list, int flag);
 void	rrb(t_list **list, int flag);
-void	rrr(t_list *a, t_list *b);
+void	rrr(t_list **a, t_list **b);
 
 // SORT
 

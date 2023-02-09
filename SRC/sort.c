@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:36:40 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/09 07:34:12 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/09 10:29:36 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,34 @@ void	trhee(t_stack *stack)
 {
 	if (check_order(stack->head))
 		return ;
-	if (*(int *)stack->head->content > *(int *)stack->head->next->content)
+	if (*stack->head->content > *stack->head->next->content)
 	{
-		ra(stack, 0);
+		ra(&stack->head, 0);
 		if (check_order(stack->head))
 			return ;
-		sa(stack, 0);
+		sa(&stack->head, 0);
 		if (check_order(stack->head))
 			return ;
-		ra(stack, 0);
+		ra(&stack->head, 0);
 	}
 	if (check_order(stack->head))
 		return ;
 	if (*(int *)stack->head->content < *(int *)stack->head->next->content)
 	{
-		rra(stack, 0);
+		rra(&stack->head, 0);
 		if (check_order(stack->head))
 			return ;
-		sa(stack, 0);
+		sa(&stack->head, 0);
 	}
 }
 
 int	check_order(t_list *lst)
 {
+	if (!lst)
+		return (0);
 	while (lst->next)
 	{
-		if (*(int *)lst->content > *(int *)lst->next->content)
+		if (*lst->content > *lst->next->content)
 			return (0);
 		lst = lst->next;
 	}
@@ -68,9 +70,9 @@ void	mergesort(t_list **headRef)
 	mergesort(&a);
 	mergesort(&b);
 /* answer = merge the two sorted lists together */
-	printList(*headRef);
+	printlist(*headRef);
 	*headRef = sortedmerge(a, b);
-	printList(*headRef);
+	printlist(*headRef);
 }
 
 t_list	*sortedmerge(t_list *a, t_list *b)
@@ -120,10 +122,15 @@ void	frontbacksplit(t_list *source, t_list **frontRef, t_list **backRef)
 	slow->next = NULL;
 }
 
-void	printList(t_list *node)
+void	printlist(t_list *node)
 {
+	if (node == NULL)
+	{
+		ft_printf("null\n");
+		return ;
+	}
 	while (node != NULL) {
-		printf("%d ", *node->content);
+		ft_printf("--%d--\n", *node->content);
 		node = node->next;
 	}
 	printf("end\n");

@@ -6,17 +6,17 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:38:00 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/08 16:32:31 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/09 07:54:38 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrr(t_list *a, t_list *b)
+void	rrr(t_list **a, t_list **b)
 {
-	rra(&a, 1);
+	rra(a, 1);
 	if (b)
-		rrb(&b, 1);
+		rrb(b, 1);
 }
 
 t_list	*pop(t_list **lst)
