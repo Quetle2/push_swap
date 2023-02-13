@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:50:53 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/09 10:30:45 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/13 11:37:22 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sort(t_list **a, t_list **b)
 		pb(a, b);
 		// printlist(*a);
 		// printlist(*b);
-		if (*b != NULL && reverse_order(*b) && check_order(*a))
+		if ((*b)->next != NULL && reverse_order(*b) && check_order(*a))
 		{
 			break ;
 		}

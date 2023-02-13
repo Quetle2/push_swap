@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/09 10:10:29 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/13 12:36:22 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ typedef struct s_stack
 void	printlist(t_list *node);
 
 int		check_nbr(int argc, char **argv);
+int		lesser_number(t_list *list);
 void	take_input(t_stack *stack, int argc, char **argv);
-void	trhee(t_stack *stack);
+void	trhee(t_list **list);
+void	fives(t_list **a, t_list **b);
 int		check_order(t_list *lst);
 int		reverse_order(t_list *lst);
 
