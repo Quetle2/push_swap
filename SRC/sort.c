@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:36:40 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/13 13:07:17 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:11:44 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,8 @@ void	printlist(t_list *node)
 		ft_printf("null\n");
 		return ;
 	}
-	while (node != NULL) {
+	while (node != NULL)
+	{
 		ft_printf("--%d--\n", *node->content);
 		node = node->next;
 	}
