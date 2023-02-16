@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:36:40 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/15 13:11:44 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:24:22 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,28 +62,6 @@ void	fives(t_list **a, t_list **b)
 	trhee(a);
 	pa(a, b);
 	pa(a, b);
-}
-
-int	lesser_number(t_list *list)
-{
-	int	i;
-	int	ye;
-	int	nbr;
-
-	i = 1;
-	ye = 1;
-	nbr = *list->content;
-	while (list)
-	{
-		if (nbr > *list->content)
-		{
-			nbr = *list->content;
-			ye = i;
-		}
-		i++;
-		list = list->next;
-	}
-	return (ye);
 }
 
 int	check_order(t_list *lst)

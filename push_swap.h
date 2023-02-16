@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/15 16:57:36 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:40:34 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ void	take_input(t_stack *stack, int argc, char **argv);
 int		check_order(t_list *lst);
 int		reverse_order(t_list *lst);
 void	moves_reset(t_moves *moves);
+void	check_best(t_list *node, t_list **b, t_moves *moves);
+int		smaller(t_list *node, t_list *list);
+int		bigger(t_list *node, t_list *list);
+t_list	*biggest(t_list *list);
 
 // MOVES
 
