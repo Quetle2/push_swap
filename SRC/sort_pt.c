@@ -66,7 +66,7 @@ void	check_best(t_list *node, t_list **list, t_moves *moves)
 	}
 	else
 	{
-		while ((temp->content < (*list)->content && temp->content < ft_lstlast(*list)->content) || (temp->content > (*list)->content && temp->content > ft_lstlast(*list)->content))
+		while ((temp->content > (*list)->content || temp->content < ft_lstlast(*list)->content)
 		{
 			local.rotb++;
 			temp = temp->next;
