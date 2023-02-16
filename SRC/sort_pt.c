@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:50:53 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/15 16:52:33 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/16 12:25:22 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,18 @@ void	moves_reset(t_moves *moves)
 	moves->rrrot = 0;
 }
 
+void	check_best(t_list **a, t_list **b, t_moves *moves)
+{
+	t_moves	local;
+
+	moves_reset(&local);
+	local.rota = moves->rota;
+	while ()
+	{
+
+	}
+}
+
 void	sort(t_list **a, t_list **b)
 {
 	t_moves	moves;
@@ -61,23 +73,30 @@ void	sort(t_list **a, t_list **b)
 		moves_reset(&moves);
 		while (node)
 		{
+			check_best(a, b, &moves);
 			node = node->next;
 			moves.rota++;
 		}
-		while (moves.rota-- && moves.rotb--)
+		while (moves.rota-- > 0 && moves.rotb-- > 0)
 			rr(a, b);
-		while (moves.rrota-- && moves.rrotb--)
+		while (moves.rrota-- > 0 && moves.rrotb-- > 0)
 			rrr(a, b);
-		while (moves.rota--)
+		while (moves.rota-- > 0)
 			ra(a, 0);
-		while (moves.rotb--)
+		while (moves.rotb-- > 0)
+		{
 			rb(b, 0);
-		while (moves.rrota--)
+			ft_printf("%i\n", moves.rotb);
+		}
+		while (moves.rrota-- > 0)
 			rra(a, 0);
-		while (moves.rrotb--)
+		while (moves.rrotb-- > 0)
 			rrb(b, 0);
+		pb(a, b);
 	}
 	trhee(a);
+	while (*b)
+		pa(a, b);
 }
 
 int	reverse_order(t_list *lst)
