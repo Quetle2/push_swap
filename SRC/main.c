@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/09 07:36:47 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:10:25 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,16 @@ int	main(int argc, char **argv)
 	stack_init(&a, argc);
 	stack_init(&b, argc);
 	take_input(&a, argc, argv);
-	if (argc <= 4)
-		trhee(&a);
-	if (argc >= 5)
-		sort(&(&a)->head, &(&b)->head);
-	// printList((&a)->head);
+	if (!check_order((&a)->head))
+	{
+		if (argc <= 4)
+			trhee(&(&a)->head);
+		else if (argc <= 6)
+			fives(&(&a)->head, &(&b)->head);
+		else if (argc >= 7)
+			sort(&(&a)->head, &(&b)->head);
+	}
+	printlist((&a)->head);
 	ft_lstclear(&(&a)->head, free);
 }
 

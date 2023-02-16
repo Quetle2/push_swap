@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/09 10:10:29 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:40:34 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,16 @@
 # define PUSH_SWAP_H
 
 # include "ft_printf/ft_printf.h"
+
+typedef struct s_moves
+{
+	int	rota;
+	int	rotb;
+	int	rrot;
+	int	rrota;
+	int	rrotb;
+	int	rrrot;
+}t_moves;
 
 typedef struct s_stack
 {
@@ -24,10 +34,15 @@ typedef struct s_stack
 void	printlist(t_list *node);
 
 int		check_nbr(int argc, char **argv);
+int		lesser_number(t_list *list);
 void	take_input(t_stack *stack, int argc, char **argv);
-void	trhee(t_stack *stack);
 int		check_order(t_list *lst);
 int		reverse_order(t_list *lst);
+void	moves_reset(t_moves *moves);
+void	check_best(t_list *node, t_list **b, t_moves *moves);
+int		smaller(t_list *node, t_list *list);
+int		bigger(t_list *node, t_list *list);
+t_list	*biggest(t_list *list);
 
 // MOVES
 
@@ -47,9 +62,8 @@ void	rrr(t_list **a, t_list **b);
 
 // SORT
 
-void	mergesort(t_list **headRef);
+void	trhee(t_list **list);
+void	fives(t_list **a, t_list **b);
 void	sort(t_list **a, t_list **b);
-t_list	*sortedmerge(t_list *a, t_list *b);
-void	frontbacksplit(t_list *source, t_list **frontRef, t_list **backRef);
 
 #endif
