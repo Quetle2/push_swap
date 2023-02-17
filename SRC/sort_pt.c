@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:50:53 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/17 13:59:26 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:04:59 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,8 @@ void	check_best(t_list *node, t_list *first, t_moves *moves)
 	}
 	else
 	{
-		while (first && (*node->content > *first->content || *node->content < *last->content))
+		while (first && (*node->content < *first->content || *node->content > *last->content))
 		{
-			ft_printf("aqui\n");
 			local.rotb++;
 			if (last->next == NULL)
 				last = first;
@@ -77,6 +76,8 @@ void	check_best(t_list *node, t_list *first, t_moves *moves)
 			first = first->next;
 		}
 	}
+	// ft_printf("locals  %i  %i  %i  %i\n", local.rota, local.rotb, local.rrota, local.rrotb);
+	// ft_printf("moves   %i  %i  %i  %i\n", moves->rota, moves->rotb, moves->rrota, moves->rrotb);
 	if (local.rota + local.rotb + local.rrota + local.rrotb < moves->rota + moves->rotb + moves->rrota + moves->rrotb)
 	{
 		moves->rota = local.rota;
@@ -84,6 +85,8 @@ void	check_best(t_list *node, t_list *first, t_moves *moves)
 		moves->rrotb = local.rrotb;
 		moves->rrota = local.rrota;
 	}
+	if (node->next == NULL)
+		local.rota = 0;
 }
 
 void	first_node(t_list *node, t_list *first, t_moves *moves)
@@ -107,7 +110,6 @@ void	first_node(t_list *node, t_list *first, t_moves *moves)
 	{
 		while (first && (*node->content < *first->content || *node->content > *last->content))
 		{
-			ft_printf("aqui\n");
 			local.rotb++;
 			if (last->next == NULL)
 				last = first;
@@ -129,12 +131,13 @@ void	sort(t_list **a, t_list **b)
 
 	pb(a, b);
 	pb(a, b);
-	while ((*a)->next->next->next)
+	while (*a)
 	{
 		node = *a;
 		moves.rota = 0;
 		moves_reset(&moves);
 		first_node(node, *b, &moves);
+		node = node->next;
 		while (node)
 		{
 			check_best(node, *b, &moves);
@@ -173,11 +176,16 @@ void	sort(t_list **a, t_list **b)
 			moves.rrotb--;
 		}
 		pb(a, b);
-		printlist(*b);
+		// printlist(*b);
 	}
-	trhee(a);
+	while (*(*b)->content != *biggest(*b)->content)
+	{
+		rb(b, 0);
+	}
 	while (*b)
+	{
 		pa(a, b);
+	}
 }
 
 int	reverse_order(t_list *lst)

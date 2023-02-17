@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:21:40 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/16 17:45:10 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:04:00 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,17 @@ t_list	*biggest(t_list *list)
 		list = list->next;
 	}
 	return (list);
+}
+
+t_list	*smallest(t_list *list)
+{
+	while (list->next)
+	{
+		if (smaller(list, list))
+			return (list);
+		list = list->next;
+	}
+	return (list);	
 }
 
 int	lesser_number(t_list *list)

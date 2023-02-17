@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/17 13:36:04 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/17 16:04:03 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	check_best(t_list *node, t_list *first, t_moves *moves);
 int		smaller(t_list *node, t_list *list);
 int		bigger(t_list *node, t_list *list);
 t_list	*biggest(t_list *list);
+t_list	*smallest(t_list *list);
 void	first_node(t_list *node, t_list *first, t_moves *moves);
 
 // MOVES
