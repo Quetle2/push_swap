@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/02/16 17:02:37 by miandrad         ###   ########.fr        #
+#    Updated: 2023/02/17 18:01:08 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRC = main.c moves.c moves_two.c moves_trhee.c sort.c sort_pt.c checker.c
 
 OBJ = $(SRC:.c=.o)
 
-ARG = 9 6 8 5 3 2 10 7 1
+ARG = 61 70 62 24 13 36 57 80 6 55 97 37 77 25 16 72 50 9 48 43 89 83 76 39 99 93 68 22 1 12 45 7 73 29 42 20 44 63 91 49 56 15 54 82 78 27 51 10 64 34 30 8 94 95 5 85 21 88 40 75 31 69 65 23 53 46 67 86 92 19 87 79 38 26 41 52 90 47 11 66 14 60 59 28 3 33 81 71 32 2 17 96 58 100 35 98 4 84 18 74 
 
 all: $(NAME)
 
@@ -61,6 +61,7 @@ git: clean
 	@git add .
 	@git commit
 	@git push
+	@echo "Committed and pushed" 
 
 clean: 
 	@$(RM) $(addprefix SRC/,$(OBJ))
