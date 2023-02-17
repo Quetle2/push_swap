@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:50:53 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/17 18:17:59 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/17 18:56:30 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,14 +202,14 @@ void	sort(t_list **a, t_list **b)
 		pb(a, b);
 		// printlist(*b);
 	}
-	while (*(*b)->content != *biggest(*b)->content)
-	{
-		rb(b, 0);
-	}
+	if (get_size(*b) - get_size(biggest(*b)) <= get_size(*b) / 2)
+		while (*(*b)->content != *biggest(*b)->content)
+			rb(b, 0);
+	else
+		while (*(*b)->content != *biggest(*b)->content)
+			rrb(b, 0);
 	while (*b)
-	{
 		pa(a, b);
-	}
 }
 
 int	reverse_order(t_list *lst)
