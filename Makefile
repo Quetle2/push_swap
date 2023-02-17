@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/02/16 17:02:37 by miandrad         ###   ########.fr        #
+#    Updated: 2023/02/17 12:23:49 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRC = main.c moves.c moves_two.c moves_trhee.c sort.c sort_pt.c checker.c
 
 OBJ = $(SRC:.c=.o)
 
-ARG = 9 6 8 5 3 2 10 7 1
+ARG = 5 2 7 1 6 3 9 4 8
 
 all: $(NAME)
 

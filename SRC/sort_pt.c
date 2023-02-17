@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 14:50:53 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/16 17:11:28 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:59:26 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,28 +48,33 @@ void	moves_reset(t_moves *moves)
 	moves->rrrot = 0;
 }
 
-void	check_best(t_list *node, t_list **list, t_moves *moves)
+void	check_best(t_list *node, t_list *first, t_moves *moves)
 {
 	static t_moves	local;
-	t_list			*temp;
+	t_list	*last;
 
-	temp = *list;
 	local.rota++;
+	last = ft_lstlast(first);
 	moves_reset(&local);
-	if (smaller(node, *list) || bigger(node, *list))
+	if (smaller(node, first) || bigger(node, first))
 	{
-		while (*temp->content != *biggest(*list)->content)
+		while (*first->content != *biggest(first)->content)
 		{
 			local.rotb++;
-			temp = temp->next;
+			first = first->next;
 		}
 	}
 	else
 	{
-		while (temp->content > (*list)->content || temp->content < ft_lstlast(*list)->content)
+		while (first && (*node->content > *first->content || *node->content < *last->content))
 		{
+			ft_printf("aqui\n");
 			local.rotb++;
-			temp = temp->next;
+			if (last->next == NULL)
+				last = first;
+			else
+				last = last->next;
+			first = first->next;
 		}
 	}
 	if (local.rota + local.rotb + local.rrota + local.rrotb < moves->rota + moves->rotb + moves->rrota + moves->rrotb)
@@ -81,28 +86,34 @@ void	check_best(t_list *node, t_list **list, t_moves *moves)
 	}
 }
 
-void	first_node(t_list *node, t_list **list, t_moves *moves)
+void	first_node(t_list *node, t_list *first, t_moves *moves)
 {
 	t_moves	local;
-	t_list			*temp;
+	t_list	*last;
 
-	temp = *list;
 	moves->rota = 0;
+	local.rota = 0;
+	last = ft_lstlast(first);
 	moves_reset(&local);
-	if (smaller(node, *list) || bigger(node, *list))
+	if (smaller(node, first) || bigger(node, first))
 	{
-		while (*temp->content != *biggest(*list)->content)
+		while (*first->content != *biggest(first)->content)
 		{
 			local.rotb++;
-			temp = temp->next;
+			first = first->next;
 		}
 	}
 	else
 	{
-		while ((*list)->content > temp->content && ft_lstlast(*list)->content < temp->content)
+		while (first && (*node->content < *first->content || *node->content > *last->content))
 		{
+			ft_printf("aqui\n");
 			local.rotb++;
-			temp = temp->next;
+			if (last->next == NULL)
+				last = first;
+			else
+				last = last->next;
+			first = first->next;
 		}
 	}
 	moves->rota = local.rota;
@@ -123,10 +134,10 @@ void	sort(t_list **a, t_list **b)
 		node = *a;
 		moves.rota = 0;
 		moves_reset(&moves);
-		first_node(node, b, &moves);
+		first_node(node, *b, &moves);
 		while (node)
 		{
-			check_best(node, b, &moves);
+			check_best(node, *b, &moves);
 			node = node->next;
 		}
 		while (moves.rota > 0 && moves.rotb > 0)
@@ -134,14 +145,13 @@ void	sort(t_list **a, t_list **b)
 			rr(a, b);
 			moves.rota--;
 			moves.rotb--;
-		}	
+		}
 		while (moves.rrota > 0 && moves.rrotb > 0)
 		{
 			rrr(a, b);
 			moves.rrota--;
 			moves.rrotb--;
 		}
-		ft_printf("moves.rota  %d \n", moves.rota);
 		while (moves.rota > 0)
 		{
 			ra(a, 0);
