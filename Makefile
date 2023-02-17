@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/02/17 17:59:39 by miandrad         ###   ########.fr        #
+#    Updated: 2023/02/17 18:00:59 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ git: clean
 	@git add .
 	@git commit
 	@git push
+	@echo "Commited and Pushed"
 
 clean: 
 	@$(RM) $(addprefix SRC/,$(OBJ))
