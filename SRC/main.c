@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/17 16:54:08 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:31:44 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	main(int argc, char **argv)
 		else if (argc >= 7)
 			sort(&(&a)->head, &(&b)->head);
 	}
-	// printlist((&a)->head);
 	ft_lstclear(&(&a)->head, free);
 }
 

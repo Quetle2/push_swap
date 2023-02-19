@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:21:40 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/17 16:54:22 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:31:35 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	lesser_number(t_list *list)
 
 int	get_size(t_list *list)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (list)

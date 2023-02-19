@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/17 16:53:28 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/19 18:22:30 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	take_input(t_stack *stack, int argc, char **argv);
 int		check_order(t_list *lst);
 int		reverse_order(t_list *lst);
 void	moves_reset(t_moves *moves);
-void	check_best(t_list *node, t_list *first, t_moves *moves, int sizeb, int sizea);
+void	check_best(t_list *node, t_list *first, t_moves *moves, int sizea);
 int		smaller(t_list *node, t_list *list);
 int		bigger(t_list *node, t_list *list);
 t_list	*biggest(t_list *list);
 int		get_size(t_list *list);
-void	first_node(t_list *node, t_list *first, t_moves *moves, int sizeb, int sizea);
+void	first_node(t_list *node, t_list *first, t_moves *moves, int sizea);
 
 // MOVES
 
@@ -67,5 +67,15 @@ void	rrr(t_list **a, t_list **b);
 void	trhee(t_list **list);
 void	fives(t_list **a, t_list **b);
 void	sort(t_list **a, t_list **b);
+
+
+// HELPER
+
+void	sort_helper(t_list **a, t_list **b, t_moves *moves);
+void	first_helper(t_list *node, t_list *first, t_list *last, t_moves *local);
+void	first_helperr(t_moves *local, int sizea, int sizeb);
+void	best_helper(t_list *node, t_list *first, t_list *last, t_moves *local);
+void	best_helperr(t_moves *local, int sizea, int sizeb);
+void	convert(t_list *node, t_moves *local, int sizea);
 
 #endif
