@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/20 11:13:42 by miandrad         ###   ########.fr       */
+/*   Created: 2023/02/20 11:04:41 by miandrad          #+#    #+#             */
+/*   Updated: 2023/02/20 13:19:52 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker.h"
 
 void	stack_init(t_stack *stack, int argc)
 {
@@ -25,23 +25,18 @@ int	main(int argc, char **argv)
 
 	stack_init(&a, argc);
 	stack_init(&b, argc);
-	if (argc < 2)
-		return (0);
 	if (!take_input(&a, argc, argv))
 	{
 		ft_printf("Error\n");
 		ft_lstclear(&(&a)->head, free);
 		return (0);
 	}
-	if (!check_order((&a)->head))
-	{
-		if (argc <= 4)
-			trhee(&(&a)->head);
-		else if (argc <= 6)
-			fives(&(&a)->head, &(&b)->head);
-		else if (argc >= 7)
-			sort(&(&a)->head, &(&b)->head);
-	}
+	if (!replicate(&(&a)->head, &(&b)->head))
+		ft_printf("Error\n");
+	else if (check_order((&a)->head) || (&b)->head != NULL)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
 	ft_lstclear(&(&a)->head, free);
 }
 
