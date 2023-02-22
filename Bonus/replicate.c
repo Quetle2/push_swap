@@ -6,59 +6,11 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:55:36 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/22 12:05:26 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:19:43 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-// int	replicate(t_list **a, t_list **b)
-// {
-// 	char	*line;
-
-// 	line = get_next_line(2);
-// 	while (line)
-// 	{
-// 		if (line[1] == 'a' && line[2] == '\n')
-// 		{
-// 			if (line[0] == 'r')
-// 				ra(a, 0);
-// 			else if (line[0] == 's')
-// 				sa(a, 0);
-// 			else if (line[0] == 'p')
-// 				pa(a, 0);
-// 			else
-// 				return (0);
-// 		}
-// 		else if (line[1] == 'b')
-// 		{
-// 			if (line[0] == 'r')
-// 				rb(a, 0);
-// 			else if (line[0] == 's')
-// 				sb(a, 0);
-// 			else if (line[0] == 'p')
-// 				pb(a, 0);
-// 			else
-// 				return (0);
-// 		}
-// 		else if (line[2] == 'a')
-// 			rra(a, 0);
-// 		else if (line[2] == 'b')
-// 			rrb(b, 0);
-// 		else if (line[2] == 'r')
-// 			rrr(a, b);
-// 		else if (line[1] == 'r' && line[2] == '\n')
-// 			rr(a, b);
-// 		else if (line[1] == 's')
-// 			ss(a, b);
-// 		else
-// 			return (0);
-// 		free(line);
-// 		line = get_next_line(2);
-// 	}
-// 	free(line);
-// 	return (1);
-// }
 
 int	replicate(t_list **a, t_list **b)
 {
