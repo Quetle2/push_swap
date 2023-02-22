@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 16:09:52 by miandrad          #+#    #+#              #
-#    Updated: 2023/02/22 13:23:59 by miandrad         ###   ########.fr        #
+#    Updated: 2023/02/22 19:48:08 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ OBJ = $(SRC:.c=.o)
 
 B_OBJ = $(B_SRC:.c=.o)
 
-ARG = 10 9 8 7 6 5 4 3 2 1
+ARG = 1213 98 61 42 94 45 9 8 2
 
 all: $(NAME)
 
@@ -67,7 +67,7 @@ run: $(NAME)
 	@./push_swap $(ARG)
 
 check: $(NAME)
-	@./push_swap $(ARG) | Bonus/checker $(ARG)
+	@./push_swap $(ARG) | ./checker $(ARG)
 
 valgrind: $(NAME)
 	@valgrind --leak-check=full ./push_swap $(ARG)
@@ -76,7 +76,7 @@ git: fclean
 	@git add .
 	@git commit
 	@git push
-	@echo " -------Commited and Pushed------ "
+	@echo " -------Commited and Pushed------- "
 
 clean: 
 	@$(RM) $(addprefix SRC/,$(OBJ))

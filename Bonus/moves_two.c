@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:37:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/20 12:45:58 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:24:57 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ra(t_list **list)
 {
 	t_list	*node;
 
+	if (!*list || !(*list)->next)
+		return ;
 	node = pop(list);
 	ft_lstadd_back(list, node);
 }
@@ -24,6 +26,8 @@ void	rb(t_list **list)
 {
 	t_list	*node;
 
+	if (!*list || !(*list)->next)
+		return ;
 	node = pop(list);
 	ft_lstadd_back(list, node);
 }
@@ -31,14 +35,15 @@ void	rb(t_list **list)
 void	rr(t_list **a, t_list **b)
 {
 	ra(a);
-	if (*b)
-		rb(b);
+	rb(b);
 }
 
 void	rra(t_list **list)
 {
 	t_list	*node;
 
+	if (!*list || !(*list)->next)
+		return ;
 	node = *list;
 	while (node->next->next)
 		node = node->next;
@@ -50,6 +55,8 @@ void	rrb(t_list **list)
 {
 	t_list	*node;
 
+	if (!*list || !(*list)->next)
+		return ;
 	node = *list;
 	while (node->next->next)
 		node = node->next;

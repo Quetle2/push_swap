@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 16:53:00 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/08 16:06:36 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:10:35 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	sa(t_list **list, int flag)
 	t_list	*a;
 	t_list	*b;
 
+	if (!*list || !(*list)->next)
+		return ;
 	a = pop(list);
 	b = pop(list);
 	ft_lstadd_front(list, a);
@@ -30,6 +32,8 @@ void	sb(t_list **list, int flag)
 	t_list	*a;
 	t_list	*b;
 
+	if (!*list || !(*list)->next)
+		return ;
 	a = pop(list);
 	b = pop(list);
 	ft_lstadd_front(list, a);
@@ -41,15 +45,16 @@ void	sb(t_list **list, int flag)
 void	ss(t_list **a, t_list **b)
 {
 	sa(a, 1);
-	if (b)
-		sb(b, 1);
-	ft_printf("s\n");
+	sb(b, 1);
+	ft_printf("ss\n");
 }
 
 void	pa(t_list **a, t_list **b)
 {
 	t_list	*node;
 
+	if (!*b)
+		return ;
 	node = pop(b);
 	ft_lstadd_front(a, node);
 	ft_printf("pa\n");
@@ -59,6 +64,8 @@ void	pb(t_list **a, t_list **b)
 {
 	t_list	*node;
 
+	if (!*a)
+		return ;
 	node = pop(a);
 	ft_lstadd_front(b, node);
 	ft_printf("pb\n");

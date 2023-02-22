@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:37:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/16 17:59:38 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:19:13 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ra(t_list **list, int flag)
 {
 	t_list	*node;
 
+	if (!*list || !(*list)->next)
+		return ;
 	node = pop(list);
 	ft_lstadd_back(list, node);
 	if (flag == 0)
@@ -26,6 +28,8 @@ void	rb(t_list **list, int flag)
 {
 	t_list	*node;
 
+	if (!*list || !(*list)->next)
+		return ;
 	node = pop(list);
 	ft_lstadd_back(list, node);
 	if (flag == 0)
@@ -35,8 +39,7 @@ void	rb(t_list **list, int flag)
 void	rr(t_list **a, t_list **b)
 {
 	ra(a, 1);
-	if (*b)
-		rb(b, 1);
+	rb(b, 1);
 	ft_printf("rr\n");
 }
 
@@ -44,6 +47,8 @@ void	rra(t_list **list, int flag)
 {
 	t_list	*node;
 
+	if (!*list || !(*list)->next)
+		return ;
 	node = *list;
 	while (node->next->next)
 		node = node->next;
@@ -57,6 +62,8 @@ void	rrb(t_list **list, int flag)
 {
 	t_list	*node;
 
+	if (!*list || !(*list)->next)
+		return ;
 	node = *list;
 	while (node->next->next)
 		node = node->next;

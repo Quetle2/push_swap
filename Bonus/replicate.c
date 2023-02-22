@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:55:36 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/22 13:19:43 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:26:04 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ int	replicate_two(t_list **a, t_list **b, char *line)
 		rra(a);
 	else if (line[0] == 'r' && line[1] == 'r'
 		&& line[2] == 'b' && line[3] == '\n')
-		rrb(a);
+		rrb(b);
 	else if (line[0] == 'r' && line[1] == 'r'
 		&& line[2] == 'r' && line[3] == '\n')
 		rrr(a, b);
 	else if (line[0] == 's' && line[1] == 'a' && line[2] == '\n')
 		sa(a);
 	else if (line[0] == 's' && line[1] == 'b' && line[2] == '\n')
-		sb(a);
+		sb(b);
 	else if (line[0] == 's' && line[1] == 's' && line[2] == '\n')
 		ss(a, b);
 	else

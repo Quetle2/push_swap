@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/20 10:55:40 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:43:17 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define PUSH_SWAP_H
 
 # include "ft_printf/ft_printf.h"
+
+# define MAX_INT 2147483647
+# define MIN_INT -2147483647
 
 typedef struct s_moves
 {

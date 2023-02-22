@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 14:38:00 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/16 19:23:54 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/22 18:22:20 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 void	rrr(t_list **a, t_list **b)
 {
 	rra(a, 1);
-	if (b)
-		rrb(b, 1);
+	rrb(b, 1);
 	ft_printf("rrr\n");
 }
 

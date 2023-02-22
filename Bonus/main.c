@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:04:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/20 13:19:52 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:10:20 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 	}
 	if (!replicate(&(&a)->head, &(&b)->head))
 		ft_printf("Error\n");
-	else if (check_order((&a)->head) || (&b)->head != NULL)
+	else if (check_order((&a)->head))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
