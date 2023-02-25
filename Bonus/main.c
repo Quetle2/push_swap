@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:04:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/22 19:10:20 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:49:57 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	take_input(t_stack *stack, int argc, char **argv)
 	while (i < argc)
 	{
 		nbr = malloc(sizeof(int));
+		if (ft_atoi(argv[i]) > 2147483647 || ft_atoi(argv[i]) < -2147483648)
+			return (0);
 		*nbr = ft_atoi(argv[i]);
 		if (!duplicate(stack->head, nbr))
 			ft_lstadd_back(&stack->head, ft_lstnew(nbr));
