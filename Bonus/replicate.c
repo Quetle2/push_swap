@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:55:36 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/22 19:26:04 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/02/27 13:54:44 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	replicate(t_list **a, t_list **b)
 				free(line);
 				return (0);
 			}
-			free(line);
 		}
+		free(line);
 		line = get_next_line(0);
 	}
 	free(line);
