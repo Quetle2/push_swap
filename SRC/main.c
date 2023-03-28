@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:40:55 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/25 18:49:44 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/03/28 13:16:52 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ int	take_input(t_stack *stack, int argc, char **argv)
 		if (!duplicate(stack->head, nbr))
 			ft_lstadd_back(&stack->head, ft_lstnew(nbr));
 		else
+		{
+			free(nbr);
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -88,10 +91,13 @@ int	check_nbr(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][j] == '-' && argv[i][j] == '0')
+			return (0);
+		if (argv[i][j] != '-' && argv[i][j] != '+')
+			j++;
 		while (argv[i][j])
 		{
-			if (!(argv[i][j] >= 48 && argv[i][j] <= 57)
-				&& argv[i][j] != '-' && argv[i][j] != '+')
+			if (!(argv[i][j] >= 48 && argv[i][j] <= 57))
 				return (0);
 			j++;
 		}

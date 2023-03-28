@@ -28,6 +28,7 @@ int	replicate(t_list **a, t_list **b)
 			else
 			{
 				free(line);
+				get_next_line(-1);
 				return (0);
 			}
 		}

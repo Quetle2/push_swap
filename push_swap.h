@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:43:05 by miandrad          #+#    #+#             */
-/*   Updated: 2023/02/22 19:43:17 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/03/27 13:43:46 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	rrr(t_list **a, t_list **b);
 void	trhee(t_list **list);
 void	fives(t_list **a, t_list **b);
 void	sort(t_list **a, t_list **b);
-
 
 // HELPER
 
